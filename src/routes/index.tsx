@@ -5,6 +5,8 @@ import Layout from "../Layout";
 import HomePage from "../pages/home";
 import TodoListPage from "../pages/todo-list";
 import LoginPage from "../pages/login";
+import routerConst from "../helper/routerConst";
+import JoinPage from "../pages/join";
 // import AdminMainPage from "../pages/layout/admin";
 // import ProtectRoute from "./ProtectRoute";
 // import MemberManageMainPage from "../pages/layout/admin/member";
@@ -36,7 +38,7 @@ export default function Router() {
         {/* 인증을 반드시 하지 않아야만 접속 가능한 페이지 정의 */}
         <Route element={<PrivateRoute authentication={false} />}>
           <Route
-            path="/login"
+            path={routerConst.LOGIN}
             element={
               <Layout>
                 <LoginPage />
@@ -44,11 +46,22 @@ export default function Router() {
             }
           />
         </Route>
+        {/* 인증을 반드시 하지 않아야만 접속 가능한 페이지 정의 */}
+        <Route element={<PrivateRoute authentication={false} />}>
+          <Route
+            path={routerConst.SIGNUP}
+            element={
+              <Layout>
+                <JoinPage />
+              </Layout>
+            }
+          />
+        </Route>
 
         {/* 인증을 반드시 해야지만 접속 가능한 페이지 정의 */}
-        <Route element={<PrivateRoute authentication={true} />}>
+        <Route element={<PrivateRoute authentication={false} />}>
           <Route
-            path="/mypage"
+            path={routerConst.TODO}
             element={
               <Layout>
                 <TodoListPage />
