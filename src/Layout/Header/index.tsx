@@ -18,6 +18,7 @@ import {
 import logo from "../../assets/images/logo.png";
 import routerConst from "../../helper/routerConst";
 import { useLocation } from "react-router";
+import { ACCESS_TOKEN } from "../../helper/etcConsts";
 
 const products = [
   {
@@ -62,6 +63,7 @@ function classNames(...classes: string[]) {
 
 const Home = () => {
   const location = useLocation();
+  const isAuthenticated = localStorage.getItem(ACCESS_TOKEN);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -85,7 +87,7 @@ const Home = () => {
         <div className="flex lg:hidden"></div>
         <h1 className="font-bold text-xl">Todo List</h1>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          {location.pathname !== routerConst.LOGIN && (
+          {location.pathname !== routerConst.LOGIN && !isAuthenticated && (
             <a
               href={routerConst.LOGIN}
               className="text-sm font-semibold leading-6 text-gray-900"

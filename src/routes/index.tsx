@@ -59,7 +59,7 @@ export default function Router() {
         </Route>
 
         {/* 인증을 반드시 해야지만 접속 가능한 페이지 정의 */}
-        <Route element={<PrivateRoute authentication={false} />}>
+        <Route element={<PrivateRoute authentication={true} />}>
           <Route
             path={routerConst.TODO}
             element={
