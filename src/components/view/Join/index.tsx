@@ -7,7 +7,6 @@ const Join = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { doJoin } = useJoin();
-  console.log("회원가입 페이지");
 
   return (
     <>
