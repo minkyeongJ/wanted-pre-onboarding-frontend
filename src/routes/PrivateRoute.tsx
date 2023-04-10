@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { ACCESS_TOKEN } from "../helper/etcConsts";
+import routerConst from "../helper/routerConst";
 
 interface PrivateRouteProps {
   children?: ReactElement; // Router.tsx에서 PrivateRoute가 감싸고 있는 Componet Element
@@ -21,19 +22,11 @@ export default function PrivateRoute({
     // 인증이 반드시 필요한 페이지
 
     // 인증을 안했을 경우 로그인 페이지로, 했을 경우 해당 페이지로
-    return isAuthenticated === null || isAuthenticated === "false" ? (
-      <Navigate to="/" />
-    ) : (
-      <Outlet />
-    );
+    return !isAuthenticated ? <Navigate to={routerConst.LOGIN} /> : <Outlet />;
   } else {
     // 인증이 반드시 필요 없는 페이지
 
     // 인증을 안했을 경우 해당 페이지로 인증을 한 상태일 경우 main페이지로
-    return isAuthenticated === null || isAuthenticated === "false" ? (
-      <Outlet />
-    ) : (
-      <Navigate to="/" />
-    );
+    return !isAuthenticated ? <Outlet /> : <Navigate to={routerConst.TODO} />;
   }
 }
