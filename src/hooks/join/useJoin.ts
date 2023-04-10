@@ -17,7 +17,7 @@ const useJoin = (): Join => {
         }
       });
     },
-    []
+    [navigation]
   );
   return { doJoin };
 };
