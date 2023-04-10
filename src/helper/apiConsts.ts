@@ -1,4 +1,4 @@
-const URL = "https://www.pre-onboarding-selection-task.shop/";
+const URL = "https://www.pre-onboarding-selection-task.shop";
 
 const apiConsts = {
   SIGNUP: "/auth/signup",

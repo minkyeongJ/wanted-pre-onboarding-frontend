@@ -1,11 +1,13 @@
-import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import { isPassedEmailPassWord } from "../../../utils/loginJoinUtil";
 import routerConst from "../../../helper/routerConst";
+import useJoin from "../../../hooks/join/useJoin";
 
 const Join = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { doJoin } = useJoin();
+  console.log("회원가입 페이지");
 
   return (
     <>
@@ -26,7 +28,10 @@ const Join = () => {
           </div>
           <form
             className="mt-8 space-y-6"
-            onSubmit={() => console.log(email, password)}
+            onSubmit={(e) => {
+              e.preventDefault();
+              doJoin({ email, password });
+            }}
           >
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
@@ -40,7 +45,7 @@ const Join = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-4"
                   placeholder="Email address"
                   data-testid="email-input"
                   onChange={(e) => setEmail(e.target.value)}
@@ -56,7 +61,7 @@ const Join = () => {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-4"
                   placeholder="Password"
                   data-testid="password-input"
                   onChange={(e) => setPassword(e.target.value)}
