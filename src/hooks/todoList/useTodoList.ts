@@ -11,6 +11,7 @@ interface TodoList {
     fn: React.Dispatch<React.SetStateAction<string>>,
     delay?: number
   ) => void;
+  getTodoList: () => Promise<void>;
 }
 
 const useTodoList = (): TodoList => {
@@ -56,7 +57,14 @@ const useTodoList = (): TodoList => {
     setTodoValue("");
   };
 
-  return { doTodoSubmit, todoValue, setTodoValue, todoList, debounces };
+  return {
+    doTodoSubmit,
+    todoValue,
+    setTodoValue,
+    todoList,
+    debounces,
+    getTodoList,
+  };
 };
 
 export default useTodoList;

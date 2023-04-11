@@ -2,7 +2,8 @@ import useTodoList from "../../../hooks/todoList/useTodoList";
 import TodoCard from "../../block/todoList/TodoCard";
 
 const TodoList = () => {
-  const { doTodoSubmit, todoValue, setTodoValue, todoList } = useTodoList();
+  const { doTodoSubmit, todoValue, setTodoValue, todoList, getTodoList } =
+    useTodoList();
 
   return (
     <main>
@@ -40,7 +41,7 @@ const TodoList = () => {
       <section id="todo-list-section">
         <ul>
           {todoList.map((data) => (
-            <TodoCard data={data} />
+            <TodoCard data={data} getTodoList={getTodoList} />
           ))}
         </ul>
       </section>
