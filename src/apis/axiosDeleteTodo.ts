@@ -1,7 +1,7 @@
 import axios from "axios";
 import apiConsts, { URL } from "../helper/apiConsts";
 
-const axiosUpdateTodo = async ({ id }: { id: string }) => {
+const axiosDeleteTodo = async ({ id }: { id: string }) => {
   const accessToken = localStorage.getItem("access_token");
   try {
     const response = await axios.delete(`${URL}${apiConsts.DELETE_TODO}`, {
@@ -16,4 +16,4 @@ const axiosUpdateTodo = async ({ id }: { id: string }) => {
   }
 };
 
-export default axiosUpdateTodo;
+export default axiosDeleteTodo;
