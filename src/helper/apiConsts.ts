@@ -5,8 +5,8 @@ const apiConsts = {
   LOGIN: "/auth/signin",
   CREATE_TODO: "/todos",
   GET_TODOS: "/todos",
-  UPDATE_TODO: "/todos/:id",
-  DELETE_TODO: "/todos/:id",
+  UPDATE_TODO: (id: number) => `/todos/${id}`,
+  DELETE_TODO: (id: number) => `/todos/${id}`,
 };
 
 export default apiConsts;

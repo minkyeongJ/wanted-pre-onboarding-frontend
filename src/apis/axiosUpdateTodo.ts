@@ -4,17 +4,17 @@ import apiConsts, { URL } from "../helper/apiConsts";
 const axiosUpdateTodo = async ({
   id,
   todo,
-  isComplete,
+  isCompleted,
 }: {
-  id: string;
+  id: number;
   todo: string;
-  isComplete: boolean;
+  isCompleted: boolean;
 }) => {
   const accessToken = localStorage.getItem("access_token");
   try {
     const response = await axios.put(
-      `${URL}${apiConsts.UPDATE_TODO}`,
-      { todo: todo, isComplete: isComplete },
+      `${URL}${apiConsts.UPDATE_TODO(id)}`,
+      { todo: todo, isCompleted: isCompleted },
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
