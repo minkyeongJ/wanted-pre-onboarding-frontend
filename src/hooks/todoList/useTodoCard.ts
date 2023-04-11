@@ -7,10 +7,13 @@ interface TodoCard {
   isChecked: boolean;
   doChangeTodoCheckedState: (checkedState: boolean) => void;
   doDeleteTodo: (id: number) => void;
+  isModified: boolean;
+  setIsModified: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const useTodoCard = ({ data }: { data: Todo }): TodoCard => {
   const [isChecked, setIsChecked] = useState(data?.isCompleted);
+  const [isModified, setIsModified] = useState(false);
 
   const changeCheckedTodoState = useCallback(
     async (data: Todo, isTodoChecked: boolean) => {
@@ -31,7 +34,6 @@ const useTodoCard = ({ data }: { data: Todo }): TodoCard => {
 
   const doChangeTodoCheckedState = (checkedState: boolean) => {
     setIsChecked(checkedState);
-    console.log(checkedState);
     changeCheckedTodoState(data, checkedState);
   };
 
@@ -39,7 +41,13 @@ const useTodoCard = ({ data }: { data: Todo }): TodoCard => {
     deleteTodo(id);
   };
 
-  return { isChecked, doChangeTodoCheckedState, doDeleteTodo };
+  return {
+    isChecked,
+    doChangeTodoCheckedState,
+    doDeleteTodo,
+    isModified,
+    setIsModified,
+  };
 };
 
 export default useTodoCard;
