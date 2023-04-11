@@ -1,4 +1,4 @@
-import Join from "../../components/view/Join";
+import Join from "../../components/view/join/Join";
 
 const JoinPage = () => {
   return <Join />;

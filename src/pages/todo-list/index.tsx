@@ -1,4 +1,4 @@
-import TodoList from "../../components/view/TodoList";
+import TodoList from "../../components/view/todoList/TodoList";
 
 const TodoListPage = () => {
   return <TodoList />;
