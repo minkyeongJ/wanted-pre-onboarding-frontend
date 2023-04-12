@@ -1,18 +1,21 @@
 import { Todo } from "../../../apis/axiosSelectTodos";
-import useTodoCard from "../../../hooks/todoList/useTodoCard";
 
 const ShowTodoCard = ({
   isChecked,
+  isModified,
   doChangeTodoCheckedState,
   doDeleteTodo,
   data,
-  getTodoList
+  getTodoList,
+  changeModifiedState,
 }: {
   isChecked: boolean;
+  isModified: boolean;
   doChangeTodoCheckedState: (checkedState: boolean) => void;
   doDeleteTodo: (id: number) => void;
   data: Todo;
   getTodoList: () => Promise<void>;
+  changeModifiedState: (state: boolean) => void;
 }) => {
   return (
     <li
@@ -34,7 +37,7 @@ const ShowTodoCard = ({
         <button
           type="button"
           className="flex-none rounded-md bg-cyan-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400"
-          onClick={() => console.log()}
+          onClick={() => changeModifiedState(!isModified)}
           data-testid="modify-button"
         >
           수정

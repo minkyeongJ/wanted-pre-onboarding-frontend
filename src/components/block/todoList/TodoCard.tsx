@@ -10,22 +10,42 @@ const TodoCard = ({
   data: Todo;
   getTodoList: () => Promise<void>;
 }) => {
-  const { isModified, isChecked, doChangeTodoCheckedState, doDeleteTodo } =
-    useTodoCard({
-      data,
-    });
+  const {
+    isModified,
+    changeModifiedState,
+    isChecked,
+    doChangeTodoCheckedState,
+    doDeleteTodo,
+    doUpdateTodo,
+    updatedTodoValue,
+    changeUpdatedTodoValue,
+  } = useTodoCard({
+    data,
+  });
 
   return (
     <>
       {isModified ? (
-        <EditTodoCard data={data} getTodoList={getTodoList} />
+        <EditTodoCard
+          isChecked={isChecked}
+          isModified={isModified}
+          doChangeTodoCheckedState={doChangeTodoCheckedState}
+          data={data}
+          getTodoList={getTodoList}
+          changeModifiedState={changeModifiedState}
+          doUpdateTodo={doUpdateTodo}
+          updatedTodoValue={updatedTodoValue}
+          changeUpdatedTodoValue={changeUpdatedTodoValue}
+        />
       ) : (
         <ShowTodoCard
           isChecked={isChecked}
+          isModified={isModified}
           doChangeTodoCheckedState={doChangeTodoCheckedState}
           doDeleteTodo={doDeleteTodo}
           data={data}
           getTodoList={getTodoList}
+          changeModifiedState={changeModifiedState}
         />
       )}
     </>
