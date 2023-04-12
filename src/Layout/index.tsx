@@ -7,10 +7,10 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <>
+    <div className="relative">
       <Header />
-      <div>{children}</div>;
-    </>
+      {children}
+    </div>
   );
 };
 

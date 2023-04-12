@@ -3,21 +3,12 @@ import routerConst from "../../../helper/routerConst";
 const Home = () => {
   return (
     <>
-      <main>
-        <section>
-          <iframe
-            src="https://giphy.com/embed/KCjV5CBW128LzsgH1Y"
-            width="400"
-            height="400"
-            className="my-0 mx-auto pointer-events-none"
-            allowFullScreen
-          ></iframe>
-        </section>
-        <section className="mt-10">
+      <main className="absolute h-[calc(100vh-80px)] w-screen bg-home-background-image-mew table bg-auto bg-no-repeat md:bg-top bg-home-bg-color">
+        <section className="mt-10 table-cell align-middle">
           <div className="max-w-full text-center">
             <a
               href={routerConst.TODO}
-              className="bg-transparent hover:bg-pink-500 text-violet-700 font-semibold hover:text-white py-2 px-4 border border-violet-500 hover:border-transparent rounded mx-auto"
+              className="bg-transparent bg-violet-100 bg-opacity-50 hover:opacity-100 hover:bg-violet-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded mx-auto text-2xl"
             >
               GO TODO
             </a>
