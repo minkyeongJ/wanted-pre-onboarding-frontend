@@ -18,8 +18,6 @@ const useTodoList = (): TodoList => {
   const [todoValue, setTodoValue] = useState("");
   const [todoList, setTodoList] = useState([]);
 
-  console.log(todoList);
-
   const debounces = (
     fn: React.Dispatch<React.SetStateAction<string>>,
     delay = 500
@@ -40,8 +38,6 @@ const useTodoList = (): TodoList => {
   useEffect(() => {
     getTodoList();
   }, [getTodoList]);
-
-  
 
   const createTodo = useCallback(
     async (value: string) => {
