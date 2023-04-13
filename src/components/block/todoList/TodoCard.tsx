@@ -1,3 +1,4 @@
+import React, { useId } from "react";
 import { Todo } from "../../../apis/axiosSelectTodos";
 import useTodoCard from "../../../hooks/todoList/useTodoCard";
 import EditTodoCard from "./EditTodoCard";
@@ -24,7 +25,7 @@ const TodoCard = ({
   });
 
   return (
-    <>
+    <React.Fragment key={`${data?.id}_todo`}>
       {isModified ? (
         <EditTodoCard
           isChecked={isChecked}
@@ -48,7 +49,7 @@ const TodoCard = ({
           changeModifiedState={changeModifiedState}
         />
       )}
-    </>
+    </React.Fragment>
   );
 };
 

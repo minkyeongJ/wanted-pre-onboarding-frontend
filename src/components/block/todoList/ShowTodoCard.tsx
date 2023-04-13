@@ -18,10 +18,7 @@ const ShowTodoCard = ({
   changeModifiedState: (state: boolean) => void;
 }) => {
   return (
-    <li
-      className="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-5 mx-auto flex justify-between"
-      id={`todo_${data?.id}`}
-    >
+    <li className="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-5 mx-auto flex justify-between">
       <label className="flex basis-5/6">
         <input
           type="checkbox"

@@ -41,7 +41,7 @@ const TodoList = () => {
       <section id="todo-list-section">
         <ul>
           {todoList.map((data) => (
-            <TodoCard data={data} getTodoList={getTodoList} />
+            <TodoCard data={data} getTodoList={getTodoList} key={data?.id} />
           ))}
         </ul>
       </section>
