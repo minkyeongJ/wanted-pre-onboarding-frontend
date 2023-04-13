@@ -30,7 +30,8 @@ const useTodoList = (): TodoList => {
   const getTodoList = useCallback(async () => {
     return await axiosSelectTodos().then((res) => {
       if (res?.status === 200) {
-        setTodoList(res.data);
+        const data = res.data;
+        setTodoList(data.reverse());
       }
     });
   }, []);
