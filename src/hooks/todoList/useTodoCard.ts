@@ -6,17 +6,19 @@ import axiosDeleteTodo from "../../apis/axiosDeleteTodo";
 interface TodoCard {
   isChecked: boolean;
   doChangeTodoCheckedState: (checkedState: boolean) => void;
-  doDeleteTodo: (id: number) => void;
+  doDeleteTodo: (id: number, getTodoList: () => Promise<void>) => void;
   isModified: boolean;
   changeModifiedState: (state: boolean) => void;
   doUpdateTodo: ({
     id,
     todo,
     isCompleted,
+    getTodoList,
   }: {
     id: number;
     todo: string;
     isCompleted: boolean;
+    getTodoList: () => Promise<void>;
   }) => void;
   updatedTodoValue: string;
   changeUpdatedTodoValue: (value: string) => void;
@@ -46,26 +48,28 @@ const useTodoCard = ({ data }: { data: Todo }): TodoCard => {
     setUpdatedTodoValue(value);
   };
 
-  const deleteTodo = async (id: number) => {
+  const deleteTodo = async (id: number, getTodoList: () => Promise<void>) => {
     return await axiosDeleteTodo({
       id: id,
-    });
+    }).then(getTodoList);
   };
 
   const updateTodo = async ({
     id,
     todo,
     isCompleted,
+    getTodoList,
   }: {
     id: number;
     todo: string;
     isCompleted: boolean;
+    getTodoList: () => Promise<void>;
   }) => {
     return await axiosUpdateTodo({
       id: id,
       todo: todo,
       isCompleted: isCompleted,
-    });
+    }).then(getTodoList);
   };
 
   const doChangeTodoCheckedState = (checkedState: boolean) => {
@@ -73,20 +77,22 @@ const useTodoCard = ({ data }: { data: Todo }): TodoCard => {
     changeCheckedTodoState(data, checkedState);
   };
 
-  const doDeleteTodo = (id: number) => {
-    deleteTodo(id);
+  const doDeleteTodo = (id: number, getTodoList: () => Promise<void>) => {
+    deleteTodo(id, getTodoList);
   };
 
   const doUpdateTodo = ({
     id,
     todo,
     isCompleted,
+    getTodoList,
   }: {
     id: number;
     todo: string;
     isCompleted: boolean;
+    getTodoList: () => Promise<void>;
   }) => {
-    updateTodo({ id, todo, isCompleted });
+    updateTodo({ id, todo, isCompleted, getTodoList });
   };
   return {
     isChecked,

@@ -22,10 +22,12 @@ const EditTodoCard = ({
     id,
     todo,
     isCompleted,
+    getTodoList,
   }: {
     id: number;
     todo: string;
     isCompleted: boolean;
+    getTodoList: () => Promise<void>;
   }) => void;
   updatedTodoValue: string;
   changeUpdatedTodoValue: (value: string) => void;
@@ -59,8 +61,8 @@ const EditTodoCard = ({
               id: data?.id,
               todo: updatedTodoValue,
               isCompleted: isChecked,
+              getTodoList: getTodoList,
             });
-            getTodoList();
             changeModifiedState(!isModified);
           }}
           data-testid="modify-button"

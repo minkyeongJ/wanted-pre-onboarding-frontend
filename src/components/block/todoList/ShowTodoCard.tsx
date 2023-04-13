@@ -12,7 +12,7 @@ const ShowTodoCard = ({
   isChecked: boolean;
   isModified: boolean;
   doChangeTodoCheckedState: (checkedState: boolean) => void;
-  doDeleteTodo: (id: number) => void;
+  doDeleteTodo: (id: number, getTodoList: () => Promise<void>) => void;
   data: Todo;
   getTodoList: () => Promise<void>;
   changeModifiedState: (state: boolean) => void;
@@ -43,8 +43,7 @@ const ShowTodoCard = ({
           type="button"
           className="flex-none rounded-md bg-rose-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-rose-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-400"
           onClick={() => {
-            doDeleteTodo(data?.id);
-            getTodoList();
+            doDeleteTodo(data?.id, getTodoList);
           }}
           data-testid="delete-button"
         >

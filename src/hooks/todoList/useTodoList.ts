@@ -39,7 +39,9 @@ const useTodoList = (): TodoList => {
   //첫 리스트
   useEffect(() => {
     getTodoList();
-  }, []);
+  }, [getTodoList]);
+
+  
 
   const createTodo = useCallback(
     async (value: string) => {
