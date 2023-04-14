@@ -9,15 +9,7 @@ $ npm install
 $ npm start
 ```
 
-# 데모 영상
-
-배포링크: [https://wanted-pre-onboarding-frontend-lilac.vercel.app/](https://wanted-pre-onboarding-frontend-lilac.vercel.app/)
-
-- 데모 영상은 배포 링크로 대체 가능하며, 배포가 되었고 배포된 사이트에서 기능이 모두 동작하면 가산점이 부여됩니다.
-- 배포된 사이트에서 기능이 정상동작 하지 않는다면 배포 가산점이 부여되지 않습니다
-- 기능이 정상 동작하지 않는 예시:
-  - 새로고침하면 404 에러 페이지 표출
-  - "/" URL이 아닌 "/signup"등의 경로로 바로 접속할 경우 404 에러 페이지 표출 등
+# 배포링크: [https://wanted-pre-onboarding-frontend-lilac.vercel.app/](https://wanted-pre-onboarding-frontend-lilac.vercel.app/)
 
 # 사용한 라이브러리
 
@@ -70,7 +62,7 @@ $ npm start
 
 #### Assignment 5
 
-- `/todo`경로에 접속하면 투두 리스트의 목록을 볼 수 있도록 해주세요
+- [x] `/todo`경로에 접속하면 투두 리스트의 목록을 볼 수 있도록 해주세요
 - [x] 목록에서는 TODO의 내용과 완료 여부가 표시되어야 합니다.
 - [x] TODO의 완료 여부는 `<input type="checkbox" />`를 통해 표현해주세요
 - [x] TODO는 `<li>` tag를 이용해 감싸주세요
