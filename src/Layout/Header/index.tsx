@@ -93,6 +93,15 @@ const Header = () => {
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           )}
+          {isAuthenticated && (
+            <span
+              href={'/'}
+              onClick={localstorage.removeItem('access_token')}
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              Log out
+            </span>
+          )}
         </div>
       </nav>
     </header>
