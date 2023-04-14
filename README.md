@@ -28,10 +28,6 @@ $ npm start
 
 ## 과제
 
-- 과제 수행 과정에서 지원자분들의 자율성과 창의력을 발휘하는 것을 기대하고 존중합니다. 다만, 아래 과제 안내에 적힌 가이드라인들은 모두 정확히 준수해주시기를 바랍니다.
-- 가이드라인에 명시된 `test-id` 속성이 제대로 부여되지 않은 경우 구현이 안된 것으로 판단됩니다.
-- 가이드라인에 명시된 사항 외에는 자유롭게 진행해주셔도 됩니다.
-
 ### :: 1. 로그인 / 회원가입
 
 - [x] `/signup` 경로에 회원가입 기능을 개발해주세요
@@ -39,10 +35,10 @@ $ npm start
 
   - [x] 페이지 안에 이메일 input, 비밀번호 input, 제출 button이 포함된 형태로 구성해주세요
 
-    - [] 이메일 input에 `data-testid="email-input"` 속성을 부여해주세요
-    - [] 패스워드 input에 `data-testid="password-input"` 속성을 부여해주세요
-    - [] 회원가입 button에 `data-testid="signup-button"` 속성을 부여해주세요
-    - [] 로그인 button에 `data-testid="signin-button"` 속성을 부여해주세요
+    - [x] 이메일 input에 `data-testid="email-input"` 속성을 부여해주세요
+    - [x] 패스워드 input에 `data-testid="password-input"` 속성을 부여해주세요
+    - [x] 회원가입 button에 `data-testid="signup-button"` 속성을 부여해주세요
+    - [x] 로그인 button에 `data-testid="signin-button"` 속성을 부여해주세요
 
 #### Assignment 1
 
@@ -83,8 +79,8 @@ $ npm start
 
 - [x] 리스트 페이지에 새로운 TODO를 입력할 수 있는 input과 추가 button을 만들어주세요
 
-  - [] TODO 입력 input에는 `data-testid="new-todo-input"` 속성을 부여해주세요
-  - [] TODO 추가 button에는 `data-testid="new-todo-add-button"` 속성을 부여해주세요
+  - [x] TODO 입력 input에는 `data-testid="new-todo-input"` 속성을 부여해주세요
+  - [x] TODO 추가 button에는 `data-testid="new-todo-add-button"` 속성을 부여해주세요
 
 - [x] 추가 button을 클릭하면 입력 input의 내용이 새로운 TODO로 추가되도록 해주세요
 - [x] TODO를 추가 한 뒤 새로고침을 해도 추가한 TODO가 목록에 보여야 합니다.
@@ -97,8 +93,8 @@ $ npm start
 
 - [x] TODO 우측에 수정버튼과 삭제 버튼을 만들어주세요
 
-  - [] 수정 버튼에는 `data-testid="modify-button"` 속성을 부여해주세요
-  - [] 삭제 버튼에는 `data-testid="delete-button"` 속성을 부여해주세요
+  - [x] 수정 버튼에는 `data-testid="modify-button"` 속성을 부여해주세요
+  - [x] 삭제 버튼에는 `data-testid="delete-button"` 속성을 부여해주세요
 
 #### Assignment 9
 
@@ -113,9 +109,9 @@ $ npm start
   - [x] TODO 우측의 수정 버튼을 누르면 수정모드가 활성화 되도록 해주세요
   - [x] 수정모드에서는 TODO의 내용을 변경할 수 있어야 합니다.
   - [x] 수정모드에서는 TODO의 내용이 input창 안에 입력된 형태로 변경해주세요
-    - [] 수정 input창에는 `data-testid="modify-input"` 속성을 부여해주세요
+    - [x] 수정 input창에는 `data-testid="modify-input"` 속성을 부여해주세요
   - [x] 수정모드에서는 TODO의 우측에 제출버튼과 취소버튼이 표시되게 해주세요
-    - [] 제출버튼에는 `data-testid="submit-button"` 속성을 부여해주세요
-    - [] 취소버튼에는 `data-testid="cancel-button"` 속성을 부여해주세요
+    - [x] 제출버튼에는 `data-testid="submit-button"` 속성을 부여해주세요
+    - [x] 취소버튼에는 `data-testid="cancel-button"` 속성을 부여해주세요
   - [x] 제출버튼을 누르면 수정한 내용을 제출해서 내용이 업데이트 될 수 있도록 해주세요
   - [x] 취소버튼을 누르면 수정한 내용을 초기화 하고, 수정모드를 비활성화 해주세요
