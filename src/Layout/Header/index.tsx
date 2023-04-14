@@ -54,11 +54,11 @@ const Header = () => {
           )}
           {isAuthenticated && (
             <span
-              onClick={()=>{
-                window.open('/')
-                localstorage.removeItem('access_token')
+              onClick={() => {
+                window.location.href = "/";
+                localStorage.removeItem("access_token");
               }}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
             >
               Log out
             </span>
