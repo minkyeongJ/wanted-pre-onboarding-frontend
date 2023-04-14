@@ -77,7 +77,7 @@ const EditTodoCard = ({
             changeUpdatedTodoValue(data?.todo);
             changeModifiedState(!isModified);
           }}
-          data-testid="cancel-button
+          data-testid="cancel-button"
         >
           취소
         </button>
