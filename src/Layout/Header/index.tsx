@@ -20,47 +20,6 @@ import routerConst from "../../helper/routerConst";
 import { useLocation } from "react-router";
 import { ACCESS_TOKEN } from "../../helper/etcConsts";
 
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const Header = () => {
   const location = useLocation();
   const isAuthenticated = localStorage.getItem(ACCESS_TOKEN);
@@ -95,8 +54,10 @@ const Header = () => {
           )}
           {isAuthenticated && (
             <span
-              href={'/'}
-              onClick={localstorage.removeItem('access_token')}
+              onClick={()=>{
+                window.open('/')
+                localstorage.removeItem('access_token')
+              }}
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Log out
