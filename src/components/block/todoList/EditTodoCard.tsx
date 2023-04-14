@@ -49,6 +49,7 @@ const EditTodoCard = ({
             className="mb-3 font-normal text-gray-700 dark:text-gray-400"
             value={updatedTodoValue}
             onChange={(e) => changeUpdatedTodoValue(e.target.value)}
+            data-testid="modify-input"
           />
         </label>
       </div>
@@ -65,7 +66,7 @@ const EditTodoCard = ({
             });
             changeModifiedState(!isModified);
           }}
-          data-testid="modify-button"
+          data-testid="submit-button"
         >
           제출
         </button>
@@ -76,7 +77,7 @@ const EditTodoCard = ({
             changeUpdatedTodoValue(data?.todo);
             changeModifiedState(!isModified);
           }}
-          data-testid="delete-button"
+          data-testid="cancel-button
         >
           취소
         </button>
